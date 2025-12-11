@@ -1,0 +1,21 @@
+name: MiniIOSApp
+options:
+  deploymentTarget:
+    iOS: "17.0"
+
+targets:
+  MiniIOSApp:
+    type: application
+    platform: iOS
+    sources:
+      - MiniIOSApp
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.example.MiniIOSApp
+
+  MiniIOSAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - MiniIOSAppTests
+    dependencies:
+      - target: MiniIOSApp

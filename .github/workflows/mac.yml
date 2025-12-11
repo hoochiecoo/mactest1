@@ -1,0 +1,19 @@
+name: macOS minimal run
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: macos-latest   # или macos-14 / macos-13
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Print system info
+        run: |
+          sw_vers
+          uname -a
+          xcodebuild -version
+          echo "Hello from macOS runner!"
